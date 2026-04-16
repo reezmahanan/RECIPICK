@@ -9,98 +9,34 @@ import Filters from '../components/Filter';
 import Favorites from '../components/Favorite';
 import './App.css';
 
-const SPECIAL_BIRYANIS = [
+const BIRYANI_MEAL_IDS = ['52805'];
+
+const INDIAN_MEAL_IDS = ['52795', '52785', '52868', '52865', '52808', '52807'];
+
+const BIRYANI_SHOWCASE = [
   {
-    idMeal: 'biryani-001',
-    strMeal: 'Royal Hyderabadi Dum Biryani',
-    strCategory: 'Biryani',
+    idMeal: '52805',
+    strMeal: 'Lamb Biryani',
     strArea: 'Indian',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1563379091339-03246963d51a?auto=format&fit=crop&w=1200&q=80',
-    strInstructions:
-      'Marinate chicken with yogurt, ginger-garlic paste, chili powder, turmeric, and salt for at least 1 hour. Fry onions until golden and reserve half for layering. Parboil basmati rice with whole spices until 70 percent cooked. Layer marinated chicken, rice, fried onion, mint, coriander, saffron milk, and ghee in a heavy pot. Seal and cook on low dum heat for 30 to 35 minutes. Rest for 10 minutes, then fluff and serve hot with raita.',
-    spiceSignature: ['Byadgi Chili', 'Saffron', 'Shahi Jeera'],
-    strIngredient1: 'Chicken',
-    strMeasure1: '700 g',
-    strIngredient2: 'Basmati Rice',
-    strMeasure2: '2 cups',
-    strIngredient3: 'Yogurt',
-    strMeasure3: '1 cup',
-    strIngredient4: 'Fried Onions',
-    strMeasure4: '1.5 cups',
-    strIngredient5: 'Mint & Coriander',
-    strMeasure5: '1 cup',
-    strIngredient6: 'Saffron Milk',
-    strMeasure6: '3 tbsp'
+    spiceSignature: ['Saffron', 'Cardamom', 'Crisp Onions']
   },
   {
-    idMeal: 'biryani-002',
-    strMeal: 'Kolkata Aloo Biryani',
-    strCategory: 'Biryani',
+    idMeal: '52795',
+    strMeal: 'Chicken Handi',
     strArea: 'Indian',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1701579231305-d84d8af9a3fd?auto=format&fit=crop&w=1200&q=80',
-    strInstructions:
-      'Marinate mutton in yogurt, onion paste, nutmeg, mace, and salt. Cook mutton until tender and reserve gravy. Parboil aromatic rice with cardamom and bay leaf. Fry boiled potatoes until lightly golden. Layer rice, mutton, potatoes, kewra water, rose water, and ghee in a pot. Finish with slow dum cooking for 25 to 30 minutes until fragrant.',
-    spiceSignature: ['Kewra', 'Nutmeg', 'Mace'],
-    strIngredient1: 'Mutton',
-    strMeasure1: '600 g',
-    strIngredient2: 'Potatoes',
-    strMeasure2: '3 large',
-    strIngredient3: 'Basmati Rice',
-    strMeasure3: '2 cups',
-    strIngredient4: 'Yogurt',
-    strMeasure4: '3/4 cup',
-    strIngredient5: 'Kewra Water',
-    strMeasure5: '1 tsp',
-    strIngredient6: 'Ghee',
-    strMeasure6: '4 tbsp'
+    spiceSignature: ['Garam Masala', 'Tomato Base', 'Creamy Gravy']
   },
   {
-    idMeal: 'biryani-003',
-    strMeal: 'Malabar Coastal Biryani',
-    strCategory: 'Biryani',
+    idMeal: '52808',
+    strMeal: 'Lamb Rogan Josh',
     strArea: 'Indian',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=1200&q=80',
-    strInstructions:
-      'Saute onions in coconut oil with fennel and green chilies. Add chicken, tomatoes, turmeric, and garam masala and cook until thick. Cook jeerakasala rice separately with whole spices. Layer masala and rice with fried cashews, raisins, mint, and ghee. Cover and steam briefly so flavors combine. Serve with pickle and onion salad.',
-    spiceSignature: ['Fennel', 'Green Chili', 'Coconut Oil'],
-    strIngredient1: 'Chicken',
-    strMeasure1: '700 g',
-    strIngredient2: 'Jeerakasala Rice',
-    strMeasure2: '2 cups',
-    strIngredient3: 'Onions',
-    strMeasure3: '3 medium',
-    strIngredient4: 'Tomatoes',
-    strMeasure4: '2 medium',
-    strIngredient5: 'Cashews & Raisins',
-    strMeasure5: '1/3 cup',
-    strIngredient6: 'Coconut Oil',
-    strMeasure6: '3 tbsp'
+    spiceSignature: ['Kashmiri Chili', 'Clove', 'Yogurt']
   },
   {
-    idMeal: 'biryani-004',
-    strMeal: 'Sindhi Spicy Biryani',
-    strCategory: 'Biryani',
-    strArea: 'Pakistani',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=1200&q=80',
-    strInstructions:
-      'Fry onions and add mutton, ginger-garlic paste, yogurt, tomato, and robust spices. Simmer until mutton is tender and masala is rich. Boil potatoes and add into masala for body. Parboil long-grain rice with salt and whole spices. Layer masala and rice with mint, coriander, lemon juice, and saffron. Cook on dum until spicy aromas are fully developed.',
-    spiceSignature: ['Black Cardamom', 'Red Chili', 'Dried Plum'],
-    strIngredient1: 'Mutton',
-    strMeasure1: '700 g',
-    strIngredient2: 'Basmati Rice',
-    strMeasure2: '2 cups',
-    strIngredient3: 'Potatoes',
-    strMeasure3: '2 medium',
-    strIngredient4: 'Yogurt',
-    strMeasure4: '1 cup',
-    strIngredient5: 'Tomatoes',
-    strMeasure5: '3 medium',
-    strIngredient6: 'Mint & Coriander',
-    strMeasure6: '1 cup'
+    idMeal: '53359',
+    strMeal: 'Beef Mandi',
+    strArea: 'Arabian-Indian',
+    spiceSignature: ['Smoked Rice', 'Whole Spices', 'Slow Roast']
   }
 ];
 
@@ -110,129 +46,57 @@ const SRI_LANKAN_SPECIALS = [
     strMeal: 'Sri Lankan Chicken Kottu',
     strCategory: 'Street Food',
     strArea: 'Sri Lankan',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1200&q=80',
+    strMealThumb: 'https://img.youtube.com/vi/t4TQxQH2fG8/hqdefault.jpg',
+    strYoutube: 'https://www.youtube.com/watch?v=t4TQxQH2fG8',
     strInstructions:
-      'Shred godamba roti into strips. Saute onion, curry leaves, garlic, green chili, and carrot. Add cooked chicken and a spoon of curry powder. Toss in roti strips with eggs and a splash of stock. Chop and mix rapidly on high heat until smoky and flavorful. Finish with black pepper and serve hot.',
-    spiceSignature: ['Curry Leaves', 'Roasted Curry Powder', 'Black Pepper'],
-    strIngredient1: 'Godamba Roti',
+      'Shred roti and stir fry with chicken, egg, vegetables, curry powder, and pepper until smoky and well mixed.',
+    spiceSignature: ['Curry Leaves', 'Ceylon Pepper', 'Roasted Curry Powder'],
+    strIngredient1: 'Roti',
     strMeasure1: '4 pieces',
-    strIngredient2: 'Cooked Chicken',
+    strIngredient2: 'Chicken',
     strMeasure2: '300 g',
-    strIngredient3: 'Eggs',
+    strIngredient3: 'Egg',
     strMeasure3: '2',
-    strIngredient4: 'Cabbage & Carrot',
-    strMeasure4: '1.5 cups',
-    strIngredient5: 'Curry Powder',
-    strMeasure5: '2 tsp'
+    strIngredient4: 'Vegetables',
+    strMeasure4: '1 cup'
   },
   {
     idMeal: 'sri-002',
     strMeal: 'Fish Ambul Thiyal',
     strCategory: 'Seafood Curry',
     strArea: 'Sri Lankan',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=1200&q=80',
+    strMealThumb: 'https://img.youtube.com/vi/R4wzN4F8kQ8/hqdefault.jpg',
+    strYoutube: 'https://www.youtube.com/watch?v=R4wzN4F8kQ8',
     strInstructions:
-      'Cube firm fish and coat with goraka paste, black pepper, turmeric, chili flakes, garlic, and salt. Add curry leaves and pandan leaf, then place in an earthen pot. Cook covered on low heat until the fish firms up and the masala turns dark and dry. Let it rest so flavors deepen before serving with rice.',
-    spiceSignature: ['Goraka', 'Black Pepper', 'Pandan'],
-    strIngredient1: 'Firm Fish',
+      'Cook fish with goraka, curry leaves, pepper, chili, and garlic until the masala turns thick, dark, and tangy.',
+    spiceSignature: ['Goraka', 'Black Pepper', 'Curry Leaves'],
+    strIngredient1: 'Fish',
     strMeasure1: '600 g',
-    strIngredient2: 'Goraka Paste',
+    strIngredient2: 'Goraka',
     strMeasure2: '2 tbsp',
-    strIngredient3: 'Curry Leaves',
-    strMeasure3: '2 sprigs',
-    strIngredient4: 'Garlic',
-    strMeasure4: '5 cloves',
-    strIngredient5: 'Turmeric & Chili Flakes',
-    strMeasure5: '2 tsp'
+    strIngredient3: 'Garlic',
+    strMeasure3: '5 cloves',
+    strIngredient4: 'Curry Leaves',
+    strMeasure4: '2 sprigs'
   },
   {
     idMeal: 'sri-003',
-    strMeal: 'Polos Young Jackfruit Curry',
+    strMeal: 'Polos Jackfruit Curry',
     strCategory: 'Curry',
     strArea: 'Sri Lankan',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80',
+    strMealThumb: 'https://img.youtube.com/vi/Sf7Q0DhJ7nQ/hqdefault.jpg',
+    strYoutube: 'https://www.youtube.com/watch?v=Sf7Q0DhJ7nQ',
     strInstructions:
-      'Cook young jackfruit with roasted curry powder, cinnamon, mustard seeds, and coconut milk. Add onion, garlic, ginger, and green chili. Simmer until the gravy thickens and coats the jackfruit. Finish with toasted coconut and lime for a rich village-style curry.',
-    spiceSignature: ['Roasted Curry Powder', 'Cinnamon', 'Coconut Milk'],
+      'Simmer young jackfruit with roasted curry powder, coconut milk, mustard, onion, and garlic until rich and tender.',
+    spiceSignature: ['Roasted Curry Powder', 'Coconut Milk', 'Cinnamon'],
     strIngredient1: 'Young Jackfruit',
     strMeasure1: '500 g',
     strIngredient2: 'Coconut Milk',
     strMeasure2: '1.5 cups',
-    strIngredient3: 'Onion & Garlic',
-    strMeasure3: '1 cup',
+    strIngredient3: 'Onion',
+    strMeasure3: '1 medium',
     strIngredient4: 'Mustard Seeds',
-    strMeasure4: '1 tsp',
-    strIngredient5: 'Roasted Curry Powder',
-    strMeasure5: '2 tsp'
-  }
-];
-
-const INDIAN_SPECIALS = [
-  {
-    idMeal: 'ind-001',
-    strMeal: 'Butter Chicken Delhi Style',
-    strCategory: 'Curry',
-    strArea: 'Indian',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1200&q=80',
-    strInstructions:
-      'Marinate chicken in yogurt, ginger-garlic paste, chili powder, and garam masala, then grill or sear. Prepare sauce with butter, tomatoes, kasuri methi, and cream. Simmer chicken in sauce until glossy and rich. Serve with naan or jeera rice.',
-    spiceSignature: ['Kasuri Methi', 'Garam Masala', 'Creamy Tomato'],
-    strIngredient1: 'Chicken',
-    strMeasure1: '700 g',
-    strIngredient2: 'Tomato Puree',
-    strMeasure2: '2 cups',
-    strIngredient3: 'Butter',
-    strMeasure3: '4 tbsp',
-    strIngredient4: 'Fresh Cream',
-    strMeasure4: '1/2 cup',
-    strIngredient5: 'Kasuri Methi',
-    strMeasure5: '1 tbsp'
-  },
-  {
-    idMeal: 'ind-002',
-    strMeal: 'Paneer Tikka Masala',
-    strCategory: 'Vegetarian',
-    strArea: 'Indian',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1200&q=80',
-    strInstructions:
-      'Marinate paneer cubes with yogurt, turmeric, chili powder, and ginger-garlic paste. Roast or pan-char until lightly smoky. Prepare onion-tomato masala with cashew paste and spices. Fold paneer in gently and simmer for 5 minutes. Garnish with coriander and serve warm.',
-    spiceSignature: ['Smoked Paprika', 'Kasuri Methi', 'Cashew Masala'],
-    strIngredient1: 'Paneer',
-    strMeasure1: '400 g',
-    strIngredient2: 'Yogurt',
-    strMeasure2: '1/2 cup',
-    strIngredient3: 'Tomatoes',
-    strMeasure3: '3 medium',
-    strIngredient4: 'Onions',
-    strMeasure4: '2 medium',
-    strIngredient5: 'Cashew Paste',
-    strMeasure5: '3 tbsp'
-  },
-  {
-    idMeal: 'ind-003',
-    strMeal: 'Chettinad Pepper Chicken',
-    strCategory: 'Spicy Curry',
-    strArea: 'Indian',
-    strMealThumb:
-      'https://images.unsplash.com/photo-1628294896516-1f0c6be5adcf?auto=format&fit=crop&w=1200&q=80',
-    strInstructions:
-      'Dry roast black pepper, fennel, cumin, and coriander, then grind coarse. Saute onion, curry leaves, and ginger-garlic until golden. Add chicken, tomatoes, and the spice blend. Cook until thick and peppery with a dark roasted finish. Serve with parotta or rice.',
-    spiceSignature: ['Black Pepper', 'Fennel', 'Stone Flower'],
-    strIngredient1: 'Chicken',
-    strMeasure1: '800 g',
-    strIngredient2: 'Black Pepper',
-    strMeasure2: '1.5 tbsp',
-    strIngredient3: 'Fennel Seeds',
-    strMeasure3: '2 tsp',
-    strIngredient4: 'Onions',
-    strMeasure4: '3 medium',
-    strIngredient5: 'Curry Leaves',
-    strMeasure5: '2 sprigs'
+    strMeasure4: '1 tsp'
   }
 ];
 
@@ -305,6 +169,16 @@ const App = () => {
     setLoading(false);
   };
 
+  const fetchMealsByIds = async (mealIds) => {
+    const details = await Promise.all(
+      mealIds.map(async (mealId) => {
+        const response = await axios.get(`${API_URL}lookup.php?i=${mealId}`);
+        return response.data.meals?.[0];
+      })
+    );
+    return details.filter(Boolean);
+  };
+
   const addToFavorites = (recipe) => {
     if (!favorites.find(fav => fav.idMeal === recipe.idMeal)) {
       setFavorites([...favorites, recipe]);
@@ -315,9 +189,17 @@ const App = () => {
     setFavorites(favorites.filter(recipe => recipe.idMeal !== recipeId));
   };
 
-  const loadSpecialBiryanis = () => {
+  const loadSpecialBiryanis = async () => {
+    setLoading(true);
     setShowFavorites(false);
-    setRecipes(SPECIAL_BIRYANIS);
+    try {
+      const biryaniMeals = await fetchMealsByIds(BIRYANI_MEAL_IDS);
+      setRecipes(biryaniMeals);
+    } catch (error) {
+      console.error('Error loading biryani recipes:', error);
+      setRecipes([]);
+    }
+    setLoading(false);
   };
 
   const loadSriLankanRecipes = () => {
@@ -325,9 +207,30 @@ const App = () => {
     setRecipes(SRI_LANKAN_SPECIALS);
   };
 
-  const loadIndianRecipes = () => {
+  const loadIndianRecipes = async () => {
+    setLoading(true);
     setShowFavorites(false);
-    setRecipes([...SPECIAL_BIRYANIS, ...INDIAN_SPECIALS]);
+    try {
+      const indianMeals = await fetchMealsByIds(INDIAN_MEAL_IDS);
+      setRecipes(indianMeals);
+    } catch (error) {
+      console.error('Error loading Indian recipes:', error);
+      setRecipes([]);
+    }
+    setLoading(false);
+  };
+
+  const openShowcaseRecipe = async (mealId) => {
+    setLoading(true);
+    try {
+      const [meal] = await fetchMealsByIds([mealId]);
+      if (meal) {
+        setSelectedRecipe(meal);
+      }
+    } catch (error) {
+      console.error('Error opening showcase recipe:', error);
+    }
+    setLoading(false);
   };
 
   const headline = showFavorites ? 'Your Saved Flavor Vault' : 'Cook Something Bold Today';
@@ -387,10 +290,10 @@ const App = () => {
           </div>
 
           <div className="biryani-grid">
-            {SPECIAL_BIRYANIS.map((biryani, index) => {
+            {BIRYANI_SHOWCASE.map((biryani, index) => {
               const Icon = BIRYANI_ICONS[index % BIRYANI_ICONS.length];
               return (
-                <article key={biryani.idMeal} className="biryani-card" onClick={() => setSelectedRecipe(biryani)}>
+                <article key={biryani.idMeal} className="biryani-card" onClick={() => openShowcaseRecipe(biryani.idMeal)}>
                   <div className="biryani-icon-wrap">
                     <Icon className="biryani-icon" />
                   </div>

@@ -10,6 +10,8 @@ const handleImageError = (e) => {
 };
 
 const RecipeDetail = ({ recipe, onClose, onAddToFavorites, isFavorite }) => {
+  const videoUrl = recipe.strYoutube || `https://www.youtube.com/results?search_query=${encodeURIComponent(`${recipe.strMeal} recipe`)}`;
+
   // Extract ingredients from recipe
   const getIngredients = () => {
     const ingredients = [];
@@ -70,19 +72,17 @@ const RecipeDetail = ({ recipe, onClose, onAddToFavorites, isFavorite }) => {
             ))}
           </div>
           
-          {recipe.strYoutube && (
-            <div style={{ marginTop: '20px' }}>
-              <h3>Video Tutorial:</h3>
-              <a 
-                href={recipe.strYoutube} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ color: '#667eea' }}
-              >
-                Watch on YouTube
-              </a>
-            </div>
-          )}
+          <div style={{ marginTop: '20px' }}>
+            <h3>Video Tutorial:</h3>
+            <a 
+              href={videoUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: '#1f3b73' }}
+            >
+              Watch on YouTube
+            </a>
+          </div>
         </div>
       </div>
     </div>
