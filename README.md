@@ -23,7 +23,7 @@ The app now includes an auth gate before entering the recipe dashboard:
 
 ## Screenshot Section
 
-Place screenshots in the screenshots folder using these filenames.
+Demo https://recipick-wine.vercel.app/
 
 ### Login Page
 
