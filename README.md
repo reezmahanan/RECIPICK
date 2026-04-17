@@ -1,36 +1,57 @@
 # ReciPick
 
-ReciPick is a recipe discovery web app built with React and Vite. It helps users search meals, filter by categories, open full recipe details, and save favorite recipes in the browser.
+ReciPick is a recipe discovery app built with React and Vite. Users can create an account, log in, explore recipes, filter by category, open full cooking details, and save favorites.
 
-## Live App Experience
+## Features
 
-ReciPick is designed for quick recipe browsing:
+- Login and Sign Up page with localStorage session support
+- Search recipes by name
+- Filter recipes by category
+- Special quick views for Biryani, Sri Lankan, and Indian dishes
+- Recipe detail modal with ingredients, instructions, and video link
+- Add and remove favorites
+- Responsive design for desktop, tablet, and mobile
 
-- Fast keyword search
-- Category-based filtering
-- Detailed recipe view with ingredients and instructions
-- Favorite recipes saved with localStorage
-- Clean responsive layout for desktop and mobile
+## Authentication
 
-## Screenshot Demos
+The app now includes an auth gate before entering the recipe dashboard:
 
-Add your screenshots to the `screenshots` folder with the filenames below and they will render automatically in this section.
+- Sign Up creates a local account
+- Login validates saved credentials
+- Session is remembered with localStorage
+- Logout is available inside the app
 
-### Home View
+## Screenshot Section
 
-![Home View](./screenshots/home-view.png)
+Place screenshots in the screenshots folder using these filenames.
+
+### Login Page
+
+![Login Page](./screenshots/login-page.png)
+
+### Sign Up Page
+
+![Sign Up Page](./screenshots/signup-page.png)
+
+### Home Dashboard
+
+![Home Dashboard](./screenshots/home-view.png)
 
 ### Search Results
 
 ![Search Results](./screenshots/search-results.png)
 
-### Recipe Details
+### Recipe Details Modal
 
 ![Recipe Details](./screenshots/recipe-details.png)
 
-### Favorites
+### Favorites Page
 
 ![Favorites](./screenshots/favorites.png)
+
+### Mobile View
+
+![Mobile View](./screenshots/mobile-view.png)
 
 ## Tech Stack
 
@@ -63,27 +84,27 @@ ReciPick/
 
 ## Getting Started
 
-### 1) Install dependencies
+### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2) Start development server
+### 2. Start development server
 
 ```bash
 npm run dev
 ```
 
-Open the local URL shown in the terminal, usually http://localhost:5173.
+Open the URL shown in terminal, usually http://localhost:5173.
 
-### 3) Build production bundle
+### 3. Build for production
 
 ```bash
 npm run build
 ```
 
-### 4) Preview production build
+### 4. Preview production build
 
 ```bash
 npm run preview
@@ -93,14 +114,16 @@ npm run preview
 
 This project uses TheMealDB API:
 
-- Documentation: https://www.themealdb.com/api.php
+- Docs: https://www.themealdb.com/api.php
 - Base URL: https://www.themealdb.com/api/json/v1/1/
-- API key: Not required for the endpoints used in this app
+- API Key: Not required for current endpoints
 
 ## Notes
 
 - Favorites are stored in localStorage under the key favorites.
-- Folder name is currently `Src` (capital S). Keep import paths consistent with this naming.
+- Auth users are stored in localStorage under the key recipick-users.
+- Current session is stored under recipick-session-user.
+- Folder name is Src (capital S), keep imports consistent.
 
 ## License
 

@@ -331,6 +331,8 @@ const SRI_LANKAN_SPECIALS = [
 ];
 
 const BIRYANI_ICONS = [FaDrumstickBite, FaMortarPestle, FaFire, FaPepperHot];
+const AUTH_USERS_KEY = 'recipick-users';
+const AUTH_SESSION_KEY = 'recipick-session-user';
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
@@ -338,11 +340,39 @@ const App = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [favorites, setFavorites] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [authMode, setAuthMode] = useState('login');
+  const [authError, setAuthError] = useState('');
+  const [authForm, setAuthForm] = useState({
+    name: '',
+    email: '',
+    password: ''
+  });
 
   // API key (Get free key from https://www.themealdb.com/api.php - no key needed!)
   const API_URL = 'https://www.themealdb.com/api/json/v1/1/';
 
   useEffect(() => {
+    const savedSession = localStorage.getItem(AUTH_SESSION_KEY);
+    if (!savedSession) {
+      return;
+    }
+
+    try {
+      setCurrentUser(JSON.parse(savedSession));
+    } catch (error) {
+      localStorage.removeItem(AUTH_SESSION_KEY);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!currentUser) {
+      setRecipes([]);
+      setFavorites([]);
+      setShowFavorites(false);
+      return;
+    }
+
     // Load favorites from localStorage
     const savedFavorites = localStorage.getItem('favorites');
     if (savedFavorites) {
@@ -350,12 +380,101 @@ const App = () => {
     }
     // Load default recipes
     fetchDefaultRecipes();
-  }, []);
+  }, [currentUser]);
 
   useEffect(() => {
+    if (!currentUser) {
+      return;
+    }
     // Save favorites to localStorage
     localStorage.setItem('favorites', JSON.stringify(favorites));
-  }, [favorites]);
+  }, [favorites, currentUser]);
+
+  const handleAuthInputChange = (e) => {
+    const { name, value } = e.target;
+    setAuthForm((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+    setAuthError('');
+  };
+
+  const handleAuthSubmit = (e) => {
+    e.preventDefault();
+    const email = authForm.email.trim().toLowerCase();
+    const password = authForm.password.trim();
+    const name = authForm.name.trim();
+
+    if (!email || !password) {
+      setAuthError('Please enter email and password.');
+      return;
+    }
+
+    if (password.length < 6) {
+      setAuthError('Password should be at least 6 characters.');
+      return;
+    }
+
+    let users = [];
+    try {
+      users = JSON.parse(localStorage.getItem(AUTH_USERS_KEY) || '[]');
+      if (!Array.isArray(users)) {
+        users = [];
+      }
+    } catch (error) {
+      users = [];
+    }
+
+    if (authMode === 'signup') {
+      if (!name) {
+        setAuthError('Please enter your name to create an account.');
+        return;
+      }
+
+      const emailExists = users.some((user) => user.email === email);
+      if (emailExists) {
+        setAuthError('An account with this email already exists. Please log in.');
+        return;
+      }
+
+      const newUser = {
+        name,
+        email,
+        password
+      };
+      const updatedUsers = [...users, newUser];
+      localStorage.setItem(AUTH_USERS_KEY, JSON.stringify(updatedUsers));
+      localStorage.setItem(AUTH_SESSION_KEY, JSON.stringify({ name, email }));
+      setCurrentUser({ name, email });
+      setAuthForm({ name: '', email: '', password: '' });
+      return;
+    }
+
+    const matchedUser = users.find((user) => user.email === email && user.password === password);
+    if (!matchedUser) {
+      setAuthError('Invalid email or password. Please try again.');
+      return;
+    }
+
+    localStorage.setItem(AUTH_SESSION_KEY, JSON.stringify({
+      name: matchedUser.name,
+      email: matchedUser.email
+    }));
+    setCurrentUser({
+      name: matchedUser.name,
+      email: matchedUser.email
+    });
+    setAuthForm({ name: '', email: '', password: '' });
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem(AUTH_SESSION_KEY);
+    setCurrentUser(null);
+    setSelectedRecipe(null);
+    setAuthMode('login');
+    setAuthError('');
+    setAuthForm({ name: '', email: '', password: '' });
+  };
 
   const fetchDefaultRecipes = async () => {
     setLoading(true);
@@ -469,12 +588,109 @@ const App = () => {
     setLoading(false);
   };
 
+  if (!currentUser) {
+    return (
+      <div className="app">
+        <Header />
+        <main className="container auth-shell">
+          <section className="auth-panel">
+            <p className="eyebrow">Secure Access</p>
+            <h1>{authMode === 'login' ? 'Welcome Back to ReciPick' : 'Create Your ReciPick Account'}</h1>
+            <p className="hero-copy">
+              {authMode === 'login'
+                ? 'Log in to manage your personalized recipe collection and favorites.'
+                : 'Sign up in seconds to save meals, track favorites, and continue your food journey.'}
+            </p>
+
+            <div className="auth-switch" role="tablist" aria-label="Authentication Mode">
+              <button
+                type="button"
+                className={`auth-tab ${authMode === 'login' ? 'active' : ''}`}
+                onClick={() => {
+                  setAuthMode('login');
+                  setAuthError('');
+                }}
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                className={`auth-tab ${authMode === 'signup' ? 'active' : ''}`}
+                onClick={() => {
+                  setAuthMode('signup');
+                  setAuthError('');
+                }}
+              >
+                Sign Up
+              </button>
+            </div>
+
+            <form className="auth-form" onSubmit={handleAuthSubmit}>
+              {authMode === 'signup' && (
+                <label>
+                  Full Name
+                  <input
+                    type="text"
+                    name="name"
+                    value={authForm.name}
+                    onChange={handleAuthInputChange}
+                    placeholder="Enter your full name"
+                    autoComplete="name"
+                  />
+                </label>
+              )}
+
+              <label>
+                Email Address
+                <input
+                  type="email"
+                  name="email"
+                  value={authForm.email}
+                  onChange={handleAuthInputChange}
+                  placeholder="name@example.com"
+                  autoComplete="email"
+                />
+              </label>
+
+              <label>
+                Password
+                <input
+                  type="password"
+                  name="password"
+                  value={authForm.password}
+                  onChange={handleAuthInputChange}
+                  placeholder="At least 6 characters"
+                  autoComplete={authMode === 'login' ? 'current-password' : 'new-password'}
+                />
+              </label>
+
+              {authError && <p className="auth-error">{authError}</p>}
+
+              <button type="submit" className="search-button auth-submit">
+                {authMode === 'login' ? 'Login to ReciPick' : 'Create Account'}
+              </button>
+            </form>
+          </section>
+        </main>
+      </div>
+    );
+  }
+
   const headline = showFavorites ? 'Your Saved Flavor Vault' : 'Cook Something Bold Today';
 
   return (
     <div className="app">
       <Header />
       <main className="container page-shell">
+        <section className="session-strip">
+          <p>
+            Signed in as <strong>{currentUser.name}</strong>
+          </p>
+          <button type="button" className="filter-btn" onClick={handleLogout}>
+            Logout
+          </button>
+        </section>
+
         <section className="hero-panel">
           <p className="eyebrow">Daily Recipe Explorer</p>
           <h1>{headline}</h1>
