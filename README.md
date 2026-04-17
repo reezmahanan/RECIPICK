@@ -27,31 +27,32 @@ Place screenshots in the screenshots folder using these filenames.
 
 ### Login Page
 
-![Login Page](./screenshots/login-page.png)
+![Login Page](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/login.png)
 
 ### Sign Up Page
 
-![Sign Up Page](./screenshots/signup-page.png)
+![Sign Up Page](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/signup.png)
 
 ### Home Dashboard
 
-![Home Dashboard](./screenshots/home-view.png)
+![Home Dashboard](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/home.png)
 
-### Search Results
+### Special Briyani Reciepies
 
-![Search Results](./screenshots/search-results.png)
+![Special](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/Special%20Briyani%20recipies.png)
 
 ### Recipe Details Modal
 
-![Recipe Details](./screenshots/recipe-details.png)
+![Beef](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/beef.png)
+![Chicken](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/chicken.png)
+![Seafoods](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/seafoods.png)
+![Pasta](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/pasta.png)
+![desserts](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/desserts.png)
 
 ### Favorites Page
 
-![Favorites](./screenshots/favorites.png)
+![Favorites](https://github.com/reezmahanan/RECIPICK/blob/main/screenshots/favorites.png)
 
-### Mobile View
-
-![Mobile View](./screenshots/mobile-view.png)
 
 ## Tech Stack
 
@@ -63,7 +64,7 @@ Place screenshots in the screenshots folder using these filenames.
 
 ## Project Structure
 
-```text
+
 ReciPick/
   components/
     Favorite.jsx
@@ -80,7 +81,7 @@ ReciPick/
   index.html
   package.json
   vite.config.js
-```
+
 
 ## Getting Started
 
