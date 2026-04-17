@@ -1,15 +1,36 @@
 # ReciPick
 
-ReciPick is a React + Vite recipe discovery app where you can search meals, filter by category, open full recipe details, and save favorites locally.
+ReciPick is a recipe discovery web app built with React and Vite. It helps users search meals, filter by categories, open full recipe details, and save favorite recipes in the browser.
 
-## Features
+## Live App Experience
 
-- Search recipes by keyword
-- Filter recipes by category (Beef, Chicken, Dessert, etc.)
-- View recipe details with ingredients and instructions
-- Save and remove favorites
-- Favorites persist using browser localStorage
-- Responsive UI for desktop and mobile
+ReciPick is designed for quick recipe browsing:
+
+- Fast keyword search
+- Category-based filtering
+- Detailed recipe view with ingredients and instructions
+- Favorite recipes saved with localStorage
+- Clean responsive layout for desktop and mobile
+
+## Screenshot Demos
+
+Add your screenshots to the `screenshots` folder with the filenames below and they will render automatically in this section.
+
+### Home View
+
+![Home View](./screenshots/home-view.png)
+
+### Search Results
+
+![Search Results](./screenshots/search-results.png)
+
+### Recipe Details
+
+![Recipe Details](./screenshots/recipe-details.png)
+
+### Favorites
+
+![Favorites](./screenshots/favorites.png)
 
 ## Tech Stack
 
@@ -34,6 +55,7 @@ ReciPick/
     App.css
     App.jsx
     main.jsx
+  screenshots/
   index.html
   package.json
   vite.config.js
@@ -41,43 +63,44 @@ ReciPick/
 
 ## Getting Started
 
-### 1. Install dependencies
+### 1) Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Run development server
+### 2) Start development server
 
 ```bash
 npm run dev
 ```
 
-Open the local URL shown in terminal (usually `http://localhost:5173/`).
+Open the local URL shown in the terminal, usually http://localhost:5173.
 
-### 3. Build for production
+### 3) Build production bundle
 
 ```bash
 npm run build
 ```
 
-### 4. Preview production build
+### 4) Preview production build
 
 ```bash
 npm run preview
 ```
 
-## API Source
+## API
 
-This app uses [TheMealDB](https://www.themealdb.com/api.php):
+This project uses TheMealDB API:
 
-- Base URL: `https://www.themealdb.com/api/json/v1/1/`
-- No API key required for current endpoints used in this app.
+- Documentation: https://www.themealdb.com/api.php
+- Base URL: https://www.themealdb.com/api/json/v1/1/
+- API key: Not required for the endpoints used in this app
 
 ## Notes
 
-- Favorites are stored in the browser (`localStorage`) under the key `favorites`.
-- If you rename `Src` to `src`, update imports only if needed and keep path consistency.
+- Favorites are stored in localStorage under the key favorites.
+- Folder name is currently `Src` (capital S). Keep import paths consistent with this naming.
 
 ## License
 
