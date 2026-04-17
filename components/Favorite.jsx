@@ -4,8 +4,9 @@ import RecipeCard from './RecipeCard';
 const Favorites = ({ favorites, onSelectRecipe, onRemoveFavorite }) => {
   return (
     <div>
-      <h2 style={{ color: 'white', marginBottom: '20px' }}>
-        Your Favorite Recipes ❤️ ({favorites.length})
+      <h2 className="favorites-heading">
+        <span>Your Favorite Recipes ❤️</span>
+        <strong>({favorites.length})</strong>
       </h2>
       {favorites.length === 0 ? (
         <div className="no-results">
