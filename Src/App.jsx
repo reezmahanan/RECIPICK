@@ -181,7 +181,7 @@ const SRI_LANKAN_SPECIALS = [
     strMeal: 'Sri Lankan Chicken Kottu',
     strCategory: 'Street Food',
     strArea: 'Sri Lankan',
-    strMealThumb: 'https://img.youtube.com/vi/t4TQxQH2fG8/hqdefault.jpg',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/utqnjv1763598650.jpg',
     strYoutube: 'https://www.youtube.com/watch?v=t4TQxQH2fG8',
     strInstructions:
       'Shred roti and stir fry with chicken, egg, vegetables, curry powder, and pepper until smoky and well mixed.',
@@ -200,7 +200,7 @@ const SRI_LANKAN_SPECIALS = [
     strMeal: 'Fish Ambul Thiyal',
     strCategory: 'Seafood Curry',
     strArea: 'Sri Lankan',
-    strMealThumb: 'https://img.youtube.com/vi/R4wzN4F8kQ8/hqdefault.jpg',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/9bl20p1763248192.jpg',
     strYoutube: 'https://www.youtube.com/watch?v=R4wzN4F8kQ8',
     strInstructions:
       'Cook fish with goraka, curry leaves, pepper, chili, and garlic until the masala turns thick, dark, and tangy.',
@@ -219,7 +219,7 @@ const SRI_LANKAN_SPECIALS = [
     strMeal: 'Polos Jackfruit Curry',
     strCategory: 'Curry',
     strArea: 'Sri Lankan',
-    strMealThumb: 'https://img.youtube.com/vi/Sf7Q0DhJ7nQ/hqdefault.jpg',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/4er7mj1598733193.jpg',
     strYoutube: 'https://www.youtube.com/watch?v=Sf7Q0DhJ7nQ',
     strInstructions:
       'Simmer young jackfruit with roasted curry powder, coconut milk, mustard, onion, and garlic until rich and tender.',
@@ -238,7 +238,7 @@ const SRI_LANKAN_SPECIALS = [
     strMeal: 'Egg Hoppers',
     strCategory: 'Breakfast',
     strArea: 'Sri Lankan',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/0s80wo1764374393.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Egg+Hoppers',
     strInstructions:
       'Ferment hopper batter overnight. Pour into a small wok-shaped pan, crack an egg in the center, cover, and cook until edges are crisp and the center is set.',
@@ -257,7 +257,7 @@ const SRI_LANKAN_SPECIALS = [
     strMeal: 'Parippu (Dhal Curry)',
     strCategory: 'Curry',
     strArea: 'Sri Lankan',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/wuxrtu1483564410.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Parippu+Dhal+Curry',
     strInstructions:
       'Simmer red lentils with turmeric and water until soft. Temper onion, garlic, chili, mustard seeds, and curry leaves, then combine with coconut milk for a creamy finish.',
@@ -276,7 +276,7 @@ const SRI_LANKAN_SPECIALS = [
     strMeal: 'Devilled Chicken',
     strCategory: 'Stir Fry',
     strArea: 'Sri Lankan',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/4pqimk1683207418.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Devilled+Chicken',
     strInstructions:
       'Fry chicken pieces and toss with onion, bell pepper, tomato sauce, soy sauce, chili paste, and vinegar until sticky, spicy, and caramelized.',
@@ -295,7 +295,7 @@ const SRI_LANKAN_SPECIALS = [
     strMeal: 'Kiribath (Milk Rice)',
     strCategory: 'Traditional',
     strArea: 'Sri Lankan',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Kiribath',
     strInstructions:
       'Cook rice until very soft, then stir in thick coconut milk and salt. Press into a tray while hot, let it set, and cut into diamond shapes for serving.',
@@ -314,7 +314,7 @@ const SRI_LANKAN_SPECIALS = [
     strMeal: 'Sri Lankan Prawn Curry',
     strCategory: 'Seafood Curry',
     strArea: 'Sri Lankan',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/58oia61564916529.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Prawn+Curry',
     strInstructions:
       'Saute onion, garlic, ginger, and curry leaves. Add prawns with roasted curry powder, chili, and coconut milk, then simmer gently until prawns are just cooked.',

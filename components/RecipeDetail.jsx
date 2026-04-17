@@ -38,16 +38,12 @@ const RecipeDetail = ({ recipe, onClose, onAddToFavorites, isFavorite }) => {
             className="recipe-detail-image"
             onError={handleImageError}
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="recipe-detail-header">
             <h1 className="recipe-detail-title">{recipe.strMeal}</h1>
             <button 
               onClick={() => onAddToFavorites(recipe)}
-              style={{
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                fontSize: '24px'
-              }}
+              className="recipe-favorite-toggle"
+              aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
               {isFavorite ? <FaHeart color="#f5576c" size={28} /> : <FaRegHeart size={28} />}
             </button>
@@ -72,13 +68,13 @@ const RecipeDetail = ({ recipe, onClose, onAddToFavorites, isFavorite }) => {
             ))}
           </div>
           
-          <div style={{ marginTop: '20px' }}>
+          <div className="video-section">
             <h3>Video Tutorial:</h3>
             <a 
               href={videoUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              style={{ color: '#1f3b73' }}
+              className="video-link"
             >
               Watch on YouTube
             </a>
