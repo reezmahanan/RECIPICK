@@ -64,7 +64,7 @@ Place screenshots in the screenshots folder using these filenames.
 
 ## Project Structure
 
-
+```text
 ReciPick/
   components/
     Favorite.jsx
@@ -81,6 +81,7 @@ ReciPick/
   index.html
   package.json
   vite.config.js
+```
 
 
 ## Getting Started
