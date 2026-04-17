@@ -13,6 +13,123 @@ const BIRYANI_MEAL_IDS = ['52805'];
 
 const INDIAN_MEAL_IDS = ['52795', '52785', '52868', '52865', '52808', '52807'];
 
+const CUSTOM_BIRYANI_TYPES = [
+  {
+    idMeal: 'bir-001',
+    strMeal: 'Hyderabadi Chicken Biryani',
+    strCategory: 'Biryani',
+    strArea: 'Indian',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Hyderabadi+Chicken+Biryani',
+    strInstructions:
+      'Marinate chicken with yogurt and spices. Layer partially cooked basmati rice over masala chicken. Add saffron milk, mint, and fried onions. Dum-cook on low heat until fragrant and fully cooked.',
+    spiceSignature: ['Saffron', 'Mint', 'Fried Onions'],
+    strIngredient1: 'Chicken',
+    strMeasure1: '700 g',
+    strIngredient2: 'Basmati Rice',
+    strMeasure2: '2 cups',
+    strIngredient3: 'Yogurt',
+    strMeasure3: '3/4 cup',
+    strIngredient4: 'Biryani Masala',
+    strMeasure4: '2 tbsp'
+  },
+  {
+    idMeal: 'bir-002',
+    strMeal: 'Kolkata Biryani',
+    strCategory: 'Biryani',
+    strArea: 'Indian',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Kolkata+Biryani',
+    strInstructions:
+      'Cook mutton with aromatic spices until tender. Layer rice with mutton gravy, boiled potatoes, and boiled eggs. Finish with rose water, kewra water, and ghee for a subtle floral aroma.',
+    spiceSignature: ['Potato', 'Kewra', 'Rose Water'],
+    strIngredient1: 'Mutton',
+    strMeasure1: '600 g',
+    strIngredient2: 'Basmati Rice',
+    strMeasure2: '2 cups',
+    strIngredient3: 'Potato',
+    strMeasure3: '2 large',
+    strIngredient4: 'Eggs',
+    strMeasure4: '2 boiled'
+  },
+  {
+    idMeal: 'bir-003',
+    strMeal: 'Malabar Thalassery Biryani',
+    strCategory: 'Biryani',
+    strArea: 'Indian',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Malabar+Thalassery+Biryani',
+    strInstructions:
+      'Prepare chicken masala with onions, tomatoes, and spices. Cook jeerakasala rice separately with whole spices. Layer masala and rice, garnish with nuts and raisins, and finish on dum.',
+    spiceSignature: ['Jeerakasala Rice', 'Ghee', 'Raisins'],
+    strIngredient1: 'Chicken',
+    strMeasure1: '700 g',
+    strIngredient2: 'Jeerakasala Rice',
+    strMeasure2: '2 cups',
+    strIngredient3: 'Raisins',
+    strMeasure3: '2 tbsp',
+    strIngredient4: 'Cashews',
+    strMeasure4: '2 tbsp'
+  },
+  {
+    idMeal: 'bir-004',
+    strMeal: 'Sindhi Biryani',
+    strCategory: 'Biryani',
+    strArea: 'Pakistani',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Sindhi+Biryani',
+    strInstructions:
+      'Cook spiced meat curry with potatoes and yogurt. Layer with parboiled basmati rice. Add mint, coriander, green chilies, and lemon slices, then cook on dum for bold heat and aroma.',
+    spiceSignature: ['Green Chili', 'Lemon', 'Yogurt'],
+    strIngredient1: 'Beef or Mutton',
+    strMeasure1: '700 g',
+    strIngredient2: 'Basmati Rice',
+    strMeasure2: '2 cups',
+    strIngredient3: 'Potatoes',
+    strMeasure3: '2 medium',
+    strIngredient4: 'Green Chilies',
+    strMeasure4: '4 to 6'
+  },
+  {
+    idMeal: 'bir-005',
+    strMeal: 'Ambur Star Biryani',
+    strCategory: 'Biryani',
+    strArea: 'Indian',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Ambur+Star+Biryani',
+    strInstructions:
+      'Slow-cook meat with onion, curd, and red chili paste. Mix with seeraga samba rice and cook until absorbed. Serve with brinjal dalcha and onion raita.',
+    spiceSignature: ['Seeraga Samba', 'Red Chili Paste', 'Curd'],
+    strIngredient1: 'Mutton',
+    strMeasure1: '650 g',
+    strIngredient2: 'Seeraga Samba Rice',
+    strMeasure2: '2 cups',
+    strIngredient3: 'Curd',
+    strMeasure3: '1/2 cup',
+    strIngredient4: 'Dry Red Chilies',
+    strMeasure4: '8'
+  },
+  {
+    idMeal: 'bir-006',
+    strMeal: 'Dindigul Biryani',
+    strCategory: 'Biryani',
+    strArea: 'Indian',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Dindigul+Biryani',
+    strInstructions:
+      'Cook meat with curd, ginger-garlic, and black pepper-forward masala. Add seeraga samba rice directly to the stock and cook until fluffy and tangy.',
+    spiceSignature: ['Black Pepper', 'Seeraga Samba', 'Lemony Tang'],
+    strIngredient1: 'Chicken or Mutton',
+    strMeasure1: '700 g',
+    strIngredient2: 'Seeraga Samba Rice',
+    strMeasure2: '2 cups',
+    strIngredient3: 'Black Pepper',
+    strMeasure3: '1 tbsp',
+    strIngredient4: 'Lemon Juice',
+    strMeasure4: '2 tbsp'
+  }
+];
+
 const BIRYANI_SHOWCASE = [
   {
     idMeal: '52805',
@@ -21,22 +138,40 @@ const BIRYANI_SHOWCASE = [
     spiceSignature: ['Saffron', 'Cardamom', 'Crisp Onions']
   },
   {
-    idMeal: '52795',
-    strMeal: 'Chicken Handi',
+    idMeal: 'bir-001',
+    strMeal: 'Hyderabadi Chicken Biryani',
     strArea: 'Indian',
-    spiceSignature: ['Garam Masala', 'Tomato Base', 'Creamy Gravy']
+    spiceSignature: ['Saffron', 'Mint', 'Fried Onions']
   },
   {
-    idMeal: '52808',
-    strMeal: 'Lamb Rogan Josh',
+    idMeal: 'bir-002',
+    strMeal: 'Kolkata Biryani',
     strArea: 'Indian',
-    spiceSignature: ['Kashmiri Chili', 'Clove', 'Yogurt']
+    spiceSignature: ['Potato', 'Kewra', 'Rose Water']
   },
   {
-    idMeal: '53359',
-    strMeal: 'Beef Mandi',
-    strArea: 'Arabian-Indian',
-    spiceSignature: ['Smoked Rice', 'Whole Spices', 'Slow Roast']
+    idMeal: 'bir-003',
+    strMeal: 'Malabar Thalassery Biryani',
+    strArea: 'Indian',
+    spiceSignature: ['Jeerakasala Rice', 'Ghee', 'Raisins']
+  },
+  {
+    idMeal: 'bir-004',
+    strMeal: 'Sindhi Biryani',
+    strArea: 'Pakistani',
+    spiceSignature: ['Green Chili', 'Lemon', 'Yogurt']
+  },
+  {
+    idMeal: 'bir-005',
+    strMeal: 'Ambur Star Biryani',
+    strArea: 'Indian',
+    spiceSignature: ['Seeraga Samba', 'Red Chili Paste', 'Curd']
+  },
+  {
+    idMeal: 'bir-006',
+    strMeal: 'Dindigul Biryani',
+    strArea: 'Indian',
+    spiceSignature: ['Black Pepper', 'Seeraga Samba', 'Lemony Tang']
   }
 ];
 
@@ -97,6 +232,101 @@ const SRI_LANKAN_SPECIALS = [
     strMeasure3: '1 medium',
     strIngredient4: 'Mustard Seeds',
     strMeasure4: '1 tsp'
+  },
+  {
+    idMeal: 'sri-004',
+    strMeal: 'Egg Hoppers',
+    strCategory: 'Breakfast',
+    strArea: 'Sri Lankan',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Egg+Hoppers',
+    strInstructions:
+      'Ferment hopper batter overnight. Pour into a small wok-shaped pan, crack an egg in the center, cover, and cook until edges are crisp and the center is set.',
+    spiceSignature: ['Fermented Rice Batter', 'Coconut Milk', 'Black Pepper'],
+    strIngredient1: 'Rice Flour',
+    strMeasure1: '2 cups',
+    strIngredient2: 'Coconut Milk',
+    strMeasure2: '1.5 cups',
+    strIngredient3: 'Eggs',
+    strMeasure3: '4',
+    strIngredient4: 'Yeast',
+    strMeasure4: '1 tsp'
+  },
+  {
+    idMeal: 'sri-005',
+    strMeal: 'Parippu (Dhal Curry)',
+    strCategory: 'Curry',
+    strArea: 'Sri Lankan',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Parippu+Dhal+Curry',
+    strInstructions:
+      'Simmer red lentils with turmeric and water until soft. Temper onion, garlic, chili, mustard seeds, and curry leaves, then combine with coconut milk for a creamy finish.',
+    spiceSignature: ['Red Lentils', 'Curry Leaves', 'Mustard Seeds'],
+    strIngredient1: 'Red Lentils',
+    strMeasure1: '1 cup',
+    strIngredient2: 'Coconut Milk',
+    strMeasure2: '1 cup',
+    strIngredient3: 'Onion',
+    strMeasure3: '1 small',
+    strIngredient4: 'Curry Leaves',
+    strMeasure4: '1 sprig'
+  },
+  {
+    idMeal: 'sri-006',
+    strMeal: 'Devilled Chicken',
+    strCategory: 'Stir Fry',
+    strArea: 'Sri Lankan',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Devilled+Chicken',
+    strInstructions:
+      'Fry chicken pieces and toss with onion, bell pepper, tomato sauce, soy sauce, chili paste, and vinegar until sticky, spicy, and caramelized.',
+    spiceSignature: ['Chili Paste', 'Soy Sauce', 'Vinegar'],
+    strIngredient1: 'Chicken',
+    strMeasure1: '600 g',
+    strIngredient2: 'Bell Pepper',
+    strMeasure2: '1 large',
+    strIngredient3: 'Onion',
+    strMeasure3: '1 medium',
+    strIngredient4: 'Chili Paste',
+    strMeasure4: '2 tbsp'
+  },
+  {
+    idMeal: 'sri-007',
+    strMeal: 'Kiribath (Milk Rice)',
+    strCategory: 'Traditional',
+    strArea: 'Sri Lankan',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Kiribath',
+    strInstructions:
+      'Cook rice until very soft, then stir in thick coconut milk and salt. Press into a tray while hot, let it set, and cut into diamond shapes for serving.',
+    spiceSignature: ['Coconut Milk', 'Short Grain Rice', 'Lunu Miris'],
+    strIngredient1: 'White Rice',
+    strMeasure1: '2 cups',
+    strIngredient2: 'Thick Coconut Milk',
+    strMeasure2: '1 cup',
+    strIngredient3: 'Salt',
+    strMeasure3: '1 tsp',
+    strIngredient4: 'Lunu Miris',
+    strMeasure4: 'To serve'
+  },
+  {
+    idMeal: 'sri-008',
+    strMeal: 'Sri Lankan Prawn Curry',
+    strCategory: 'Seafood Curry',
+    strArea: 'Sri Lankan',
+    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strYoutube: 'https://www.youtube.com/results?search_query=Sri+Lankan+Prawn+Curry',
+    strInstructions:
+      'Saute onion, garlic, ginger, and curry leaves. Add prawns with roasted curry powder, chili, and coconut milk, then simmer gently until prawns are just cooked.',
+    spiceSignature: ['Roasted Curry Powder', 'Coconut Milk', 'Curry Leaves'],
+    strIngredient1: 'Prawns',
+    strMeasure1: '500 g',
+    strIngredient2: 'Coconut Milk',
+    strMeasure2: '1.25 cups',
+    strIngredient3: 'Roasted Curry Powder',
+    strMeasure3: '1.5 tbsp',
+    strIngredient4: 'Garlic',
+    strMeasure4: '4 cloves'
   }
 ];
 
@@ -194,10 +424,10 @@ const App = () => {
     setShowFavorites(false);
     try {
       const biryaniMeals = await fetchMealsByIds(BIRYANI_MEAL_IDS);
-      setRecipes(biryaniMeals);
+      setRecipes([...biryaniMeals, ...CUSTOM_BIRYANI_TYPES]);
     } catch (error) {
       console.error('Error loading biryani recipes:', error);
-      setRecipes([]);
+      setRecipes(CUSTOM_BIRYANI_TYPES);
     }
     setLoading(false);
   };
@@ -221,6 +451,12 @@ const App = () => {
   };
 
   const openShowcaseRecipe = async (mealId) => {
+    const customBiryani = CUSTOM_BIRYANI_TYPES.find((recipe) => recipe.idMeal === mealId);
+    if (customBiryani) {
+      setSelectedRecipe(customBiryani);
+      return;
+    }
+
     setLoading(true);
     try {
       const [meal] = await fetchMealsByIds([mealId]);
