@@ -19,7 +19,8 @@ const CUSTOM_BIRYANI_TYPES = [
     strMeal: 'Hyderabadi Chicken Biryani',
     strCategory: 'Biryani',
     strArea: 'Indian',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Hyderabadi_Chicken_Biryani.jpg/500px-Hyderabadi_Chicken_Biryani.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Hyderabadi+Chicken+Biryani',
     strInstructions:
       'Marinate chicken with yogurt and spices. Layer partially cooked basmati rice over masala chicken. Add saffron milk, mint, and fried onions. Dum-cook on low heat until fragrant and fully cooked.',
@@ -38,7 +39,8 @@ const CUSTOM_BIRYANI_TYPES = [
     strMeal: 'Kolkata Biryani',
     strCategory: 'Biryani',
     strArea: 'Indian',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Kolkata_mutton_biryani.jpg/500px-Kolkata_mutton_biryani.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Kolkata+Biryani',
     strInstructions:
       'Cook mutton with aromatic spices until tender. Layer rice with mutton gravy, boiled potatoes, and boiled eggs. Finish with rose water, kewra water, and ghee for a subtle floral aroma.',
@@ -57,7 +59,7 @@ const CUSTOM_BIRYANI_TYPES = [
     strMeal: 'Malabar Thalassery Biryani',
     strCategory: 'Biryani',
     strArea: 'Indian',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Thalassery_biryani_-1.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Malabar+Thalassery+Biryani',
     strInstructions:
       'Prepare chicken masala with onions, tomatoes, and spices. Cook jeerakasala rice separately with whole spices. Layer masala and rice, garnish with nuts and raisins, and finish on dum.',
@@ -76,7 +78,8 @@ const CUSTOM_BIRYANI_TYPES = [
     strMeal: 'Sindhi Biryani',
     strCategory: 'Biryani',
     strArea: 'Pakistani',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Sindhi_Biryani.JPG/500px-Sindhi_Biryani.JPG',
     strYoutube: 'https://www.youtube.com/results?search_query=Sindhi+Biryani',
     strInstructions:
       'Cook spiced meat curry with potatoes and yogurt. Layer with parboiled basmati rice. Add mint, coriander, green chilies, and lemon slices, then cook on dum for bold heat and aroma.',
@@ -95,7 +98,7 @@ const CUSTOM_BIRYANI_TYPES = [
     strMeal: 'Ambur Star Biryani',
     strCategory: 'Biryani',
     strArea: 'Indian',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Chicken_biryani_3.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Ambur+Star+Biryani',
     strInstructions:
       'Slow-cook meat with onion, curd, and red chili paste. Mix with seeraga samba rice and cook until absorbed. Serve with brinjal dalcha and onion raita.',
@@ -114,7 +117,7 @@ const CUSTOM_BIRYANI_TYPES = [
     strMeal: 'Dindigul Biryani',
     strCategory: 'Biryani',
     strArea: 'Indian',
-    strMealThumb: 'https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg',
+    strMealThumb: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Dindigul_Thalappakatti_Biryani_1.jpg',
     strYoutube: 'https://www.youtube.com/results?search_query=Dindigul+Biryani',
     strInstructions:
       'Cook meat with curd, ginger-garlic, and black pepper-forward masala. Add seeraga samba rice directly to the stock and cook until fluffy and tangy.',
